@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebSockets.Internal;
 using reto_bcp_api.Dtos;
-using reto_bcp_api.Services;
 using reto_bcp_api.Services.Interfaces;
 
 namespace reto_bcp_api.Controllers
@@ -20,26 +19,35 @@ namespace reto_bcp_api.Controllers
             this.agenciaService = agenciaService;
         }
 
-        // GET api/values
         [HttpGet]
-        public ActionResult<GeneralResponse<List<AgenciaDto>>> Get()
+        public ActionResult<GeneralResponse<List<AgenciaDto>>> Get(string agencia)
         {
-            var data = agenciaService.GetAll();
-            return GeneralResponse<List<AgenciaDto>>.BuildOk(data);
+            try
+            {
+                var data = agenciaService.GetBy(agencia);
+                return GeneralResponse<List<AgenciaDto>>.BuildOk(data);
+            }
+            catch (Exception ex)
+            {
+                // Todo : call to logger
+                return GeneralResponse<List<AgenciaDto>>.BuildBad(Common.Constants.GeneralError, (List<AgenciaDto>)null);
+            }
         }
 
-        //// GET api/values/5
-        //[HttpGet("{id}")]
-        //public ActionResult<string> Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        //// POST api/values
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
+        [HttpPost]
+        public ActionResult<GeneralResponse<AgenciaDto>> Post([FromBody] AgenciaDto agencia)
+        {
+            try
+            {
+                var data = agenciaService.Save(0, agencia);
+                return GeneralResponse<AgenciaDto>.BuildOk(data);
+            }
+            catch (Exception ex)
+            {
+                // Todo : call to logger
+                return GeneralResponse<AgenciaDto>.BuildBad(Common.Constants.GeneralError, (AgenciaDto)null);
+            }
+        }
 
         //// PUT api/values/5
         //[HttpPut("{id}")]

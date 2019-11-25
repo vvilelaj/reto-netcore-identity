@@ -21,6 +21,11 @@ namespace reto_bcp_api.Persistance.Repositories
             return this.dbContext.Agencias.ToList();
         }
 
+        public List<Agencia> GetBy(string agencia)
+        {
+            return this.dbContext.Agencias.Where(x => x.Descripcion == agencia).ToList();
+        }
+
         public Agencia GetByAgenciaId(int agenciaId)
         {
             return this.dbContext.Agencias.SingleOrDefault(x => x.AgenciaId == agenciaId);

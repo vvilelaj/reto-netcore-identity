@@ -7,5 +7,7 @@ namespace reto_bcp_api.Services.Interfaces
     public interface IAgenciaService
     {
         List<AgenciaDto> GetAll();
+        List<AgenciaDto> GetBy(string agencia);
+        AgenciaDto Save(int agenciaId, AgenciaDto agencia);
     }
 }

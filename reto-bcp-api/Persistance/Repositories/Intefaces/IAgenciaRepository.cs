@@ -7,6 +7,7 @@ namespace reto_bcp_api.Persistance.Repositories.Interfaces
     {
         void DeleteByAgenciaId(Agencia agencia);
         List<Agencia> GetAll();
+        List<Agencia> GetBy(string agencia);
         Agencia GetByAgenciaId(int agenciaId);
         Agencia SaveAgencia(Agencia agencia);
         Agencia Update(Agencia agencia);

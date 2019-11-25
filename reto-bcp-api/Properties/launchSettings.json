@@ -29,8 +29,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/values",
-      "environmentVariables": {},
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/agencias",
       "httpPort": 10000
     }
   }

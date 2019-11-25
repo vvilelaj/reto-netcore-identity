@@ -38,7 +38,6 @@ namespace reto_bcp_api.Dtos
         /// </summary>
         /// <typeparam name="T2">Type of data</typeparam>
         /// <param name="message">message</param>
-        /// <param name="data">data</param>
         /// <returns>Result model</returns>
         public static GeneralResponse<T2> BuildBad<T2>(string message, T2 data)
         {
