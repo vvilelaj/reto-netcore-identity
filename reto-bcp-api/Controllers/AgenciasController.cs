@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using reto_bcp_api.Dtos;
 using reto_bcp_api.Services.Interfaces;
@@ -12,6 +13,8 @@ namespace reto_bcp_api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles ="ApiUser")]
+    [Authorize(Roles = "Admin")]
     public class AgenciasController : ControllerBase
     {
         /// <summary>

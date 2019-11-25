@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using reto_bcp_api.Dtos;
 using reto_bcp_api.Dtos.CuentasUsuario;
@@ -16,6 +17,7 @@ namespace reto_bcp_api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles ="Admin")]
     public class CuentasUsuarioController : ControllerBase
     {
         private readonly ICuentasUsuarioService _cuentasUsuarioService;
@@ -68,5 +70,6 @@ namespace reto_bcp_api.Controllers
                 return BadRequest();
             }
         }
+
     }
 }

@@ -15,9 +15,11 @@ using Swashbuckle.AspNetCore.Swagger;
 using System.Reflection;
 using System.IO;
 using System;
-//using Microsoft.IdentityModel;
 using reto_bcp_api.Persistance.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace reto_bcp_api
 {
@@ -44,6 +46,8 @@ namespace reto_bcp_api
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
@@ -70,12 +74,24 @@ namespace reto_bcp_api
                 })
                 .AddEntityFrameworkStores<RetoBCPDbContext>();
 
-            services
-                .AddScoped<IAgenciaRepository, AgenciaRepository>();
-            services
-                .AddScoped<IAgenciaService, AgenciaService>();
-            services
-                .AddScoped<ICuentasUsuarioService, CuentasUsuarioService>();
+            var key = Encoding.ASCII.GetBytes(Configuration.GetValue<string>("SecretKey"));
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
 
             services.AddSwaggerGen(swagger =>
             {
@@ -95,6 +111,16 @@ namespace reto_bcp_api
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 swagger.IncludeXmlComments(xmlPath);
             });
+
+            services
+                .AddScoped<IAgenciaRepository, AgenciaRepository>();
+            services
+                .AddScoped<IAgenciaService, AgenciaService>();
+            services
+                .AddScoped<ICuentasUsuarioService, CuentasUsuarioService>();
+            services
+                .AddScoped<IAuthService, AuthService>();
+
         }
 
         /// <summary>
@@ -118,7 +144,13 @@ namespace reto_bcp_api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseIdentity();
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            app.UseAuthentication();
+            //app.UseAuthorization();
 
             app.UseMvc();
         }
