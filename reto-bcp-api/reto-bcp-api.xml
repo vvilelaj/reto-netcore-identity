@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>reto-bcp-api</name>
+    </assembly>
+    <members>
+        <member name="T:reto_bcp_api.Controllers.AgenciasController">
+            <summary>
+            Controller para exponer los metodos del recurso Agencias
+            </summary>
+        </member>
+        <member name="F:reto_bcp_api.Controllers.AgenciasController.agenciaService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:reto_bcp_api.Controllers.AgenciasController.#ctor(reto_bcp_api.Services.Interfaces.IAgenciaService)">
+            <summary>
+            
+            </summary>
+            <param name="agenciaService"></param>
+        </member>
+        <member name="M:reto_bcp_api.Controllers.AgenciasController.Get(System.String)">
+            <summary>
+            Devuelve un listado de las agencias
+            </summary>
+            <param name="agencia">Nombre de Agencia</param>
+            <returns>Intancia de GeneralResponse con informacion del listado de agencia</returns>
+        </member>
+        <member name="M:reto_bcp_api.Controllers.AgenciasController.Post(reto_bcp_api.Dtos.AgenciaDto)">
+            <summary>
+            Permite registar una agencia
+            </summary>
+            <param name="agencia">Instancia de AgenciaDTO</param>
+            <returns>Intancia de GeneralResponse con informacion de la agencia</returns>
+        </member>
+        <member name="P:reto_bcp_api.Dtos.GeneralResponse`1.Success">
+            <summary>
+            Gets or sets whether was succeed
+            </summary>
+        </member>
+        <member name="P:reto_bcp_api.Dtos.GeneralResponse`1.Message">
+            <summary>
+            Gets or sets message
+            </summary>
+        </member>
+        <member name="P:reto_bcp_api.Dtos.GeneralResponse`1.Data">
+            <summary>
+            Gets or sets data
+            </summary>
+        </member>
+        <member name="M:reto_bcp_api.Dtos.GeneralResponse`1.BuildOk``1(``0)">
+            <summary>
+            Build result with succeed true and null message
+            </summary>
+            <typeparam name="T2">Type of data</typeparam>
+            <param name="data">data</param>
+            <returns>result model</returns>
+        </member>
+        <member name="M:reto_bcp_api.Dtos.GeneralResponse`1.BuildBad``1(System.String,``0)">
+            <summary>
+            Build result with succeed false
+            </summary>
+            <typeparam name="T2">Type of data</typeparam>
+            <param name="message">message</param>
+            <returns>Result model</returns>
+        </member>
+        <member name="M:reto_bcp_api.Dtos.GeneralResponse`1.Build``1(System.Boolean,System.String,``0)">
+            <summary>
+            Build a result
+            </summary>
+            <typeparam name="T2">Type of data</typeparam>
+            <param name="success">True or false</param>
+            <param name="message">The message</param>
+            <param name="data">The data</param>
+            <returns>Result model</returns>
+        </member>
+        <member name="F:reto_bcp_api.SwaggerConfiguration.EndpointDescription">
+            <summary>
+            <para>Foo API v1</para>
+            </summary>
+        </member>
+        <member name="F:reto_bcp_api.SwaggerConfiguration.EndpointUrl">
+            <summary>
+            <para>/swagger/v1/swagger.json</para>
+            </summary>
+        </member>
+        <member name="F:reto_bcp_api.SwaggerConfiguration.ContactName">
+            <summary>
+            <para>Jorge Serrano</para>
+            </summary>
+        </member>
+        <member name="F:reto_bcp_api.SwaggerConfiguration.ContactUrl">
+            <summary>
+            <para>https://www.linkedin.com/in/vvilelaj/</para>
+            </summary>
+        </member>
+        <member name="F:reto_bcp_api.SwaggerConfiguration.DocNameV1">
+            <summary>
+            <para>v1</para>
+            </summary>
+        </member>
+        <member name="F:reto_bcp_api.SwaggerConfiguration.DocInfoTitle">
+            <summary>
+            <para>Foo API</para>
+            </summary>
+        </member>
+        <member name="F:reto_bcp_api.SwaggerConfiguration.DocInfoVersion">
+            <summary>
+            <para>v1</para>
+            </summary>
+        </member>
+        <member name="F:reto_bcp_api.SwaggerConfiguration.DocInfoDescription">
+            <summary>
+            <para>Foo Api - Sample Web API in ASP.NET Core 2</para>
+            </summary>
+        </member>
+    </members>
+</doc>

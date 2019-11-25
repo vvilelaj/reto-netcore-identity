@@ -8,17 +8,32 @@ using reto_bcp_api.Services.Interfaces;
 
 namespace reto_bcp_api.Controllers
 {
+    /// <summary>
+    /// Controller para exponer los metodos del recurso Agencias
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AgenciasController : ControllerBase
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly IAgenciaService agenciaService;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="agenciaService"></param>
         public AgenciasController(IAgenciaService agenciaService)
         {
             this.agenciaService = agenciaService;
         }
 
+        /// <summary>
+        /// Devuelve un listado de las agencias
+        /// </summary>
+        /// <param name="agencia">Nombre de Agencia</param>
+        /// <returns>Intancia de GeneralResponse con informacion del listado de agencia</returns>
         [HttpGet]
         public ActionResult<GeneralResponse<List<AgenciaDto>>> Get(string agencia)
         {
@@ -34,6 +49,11 @@ namespace reto_bcp_api.Controllers
             }
         }
 
+        /// <summary>
+        /// Permite registar una agencia
+        /// </summary>
+        /// <param name="agencia">Instancia de AgenciaDTO</param>
+        /// <returns>Intancia de GeneralResponse con informacion de la agencia</returns>
         [HttpPost]
         public ActionResult<GeneralResponse<AgenciaDto>> Post([FromBody] AgenciaDto agencia)
         {
