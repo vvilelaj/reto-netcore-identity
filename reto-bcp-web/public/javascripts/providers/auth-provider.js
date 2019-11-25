@@ -1,16 +1,12 @@
 ﻿class AuthProvider {
     constructor() {
-        this.url = {
-            login: "http://localhost:10000/api/auth/"
-            
-        };
     }
 
     promiseLogin(data) {
         var dfd = jQuery.Deferred();
         jQuery.ajax({
             type: "post",
-            url: this.url.login,
+            url: AuthApi.BASE + AuthApi.LOGIN,
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(data),

@@ -23,4 +23,11 @@
             return false;
         });
     }
+
+    showMessage(message) {
+        if (typeof message === "undefined" || message === null)
+            throw "LoginView.showMessage : message is null or undefined";
+
+        alert(message);
+    }
 }

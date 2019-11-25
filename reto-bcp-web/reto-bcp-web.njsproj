@@ -35,11 +35,17 @@
     <Content Include="public\html\createuser.html" />
     <Content Include="public\html\index.html" />
     <Content Include="public\html\login.html" />
+    <Content Include="public\javascripts\common\general.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\javascripts\providers\auth-provider.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="public\javascripts\createuser.js" />
     <Content Include="public\javascripts\index.js" />
+    <Content Include="public\javascripts\common\constants.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\javascripts\providers\localstorage-provider.js">
       <SubType>Code</SubType>
     </Content>
@@ -67,6 +73,7 @@
     <Folder Include="public\javascripts\" />
     <Folder Include="public\html\" />
     <Folder Include="public\javascripts\login\" />
+    <Folder Include="public\javascripts\common\" />
     <Folder Include="public\javascripts\providers\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
