@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reto BCP - Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../stylesheets/index.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../javascripts/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Reto BCP</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse in" aria-expanded="true" style="">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="./">Inicio <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li><a href="./login.html">Inicio Sesi&oacute;n</a></li>
+                        <li><a href="./createuser.html">Crear Usuario</a></li>
+                        <li><a href="./agencias.html">Agencias</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="page-header">
+            <h1>Inicio</h1>
+        </div>
+        <p class="lead">En la parte superior tenemos las opciones del aplicativo.</p>
+        <ul>
+            <li>
+                Inicio
+                <ul>
+                    <li>Muestra todas la opciones del aplicativo</li>
+                    <li>Navegaci&oacute; An&oacute;nima</li>
+                </ul>
+            </li>
+            <li>
+                Inicio Sesi&oacute;n
+                <ul>
+                    <li>Permite el incio de sesi&oacute;n en el aplicativo</li>
+                    <li>Navegaci&oacute; An&oacute;nima</li>
+                </ul>
+            </li>
+            <li>
+                Crear Usuario
+                <ul>
+                    <li>Permite crear una cuenta de usuario</li>
+                    <li>El rol asignado por defecto es ApiUser</li>
+                    <li>Navegaci&oacute; An&oacute;nima</li>
+                </ul>
+            </li>
+            <li>
+                Agencias
+                <ul>
+                    <li>Muestra las agencias que se recuperan del API.</li>
+                    <li>Restringido a usuarios con el rol API User y Admin</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--<footer class="footer">
+        <div class="container">
+            <p class="text-muted">vvilelaj Todos los derechos reservados</p>
+        </div>
+    </footer>-->
+</body>
+</html>

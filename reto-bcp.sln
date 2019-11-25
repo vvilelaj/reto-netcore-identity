@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reto-bcp-api", "reto-bcp-api\reto-bcp-api.csproj", "{4947F205-C0D6-44A0-B95D-0A9EEBEFD085}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "reto-bcp-api", "reto-bcp-api\reto-bcp-api.csproj", "{4947F205-C0D6-44A0-B95D-0A9EEBEFD085}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "reto-bcp-web", "reto-bcp-web\reto-bcp-web.njsproj", "{27BBCC16-AE58-4CF8-A702-096C3BE61E05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4947F205-C0D6-44A0-B95D-0A9EEBEFD085}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4947F205-C0D6-44A0-B95D-0A9EEBEFD085}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4947F205-C0D6-44A0-B95D-0A9EEBEFD085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27BBCC16-AE58-4CF8-A702-096C3BE61E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27BBCC16-AE58-4CF8-A702-096C3BE61E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27BBCC16-AE58-4CF8-A702-096C3BE61E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27BBCC16-AE58-4CF8-A702-096C3BE61E05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
