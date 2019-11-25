@@ -11,6 +11,6 @@
     }
 
     removeItem(key) {
-        return JSON.parse(window.localStorage.removeItem(key));
+        window.localStorage.removeItem(key);
     }
 }

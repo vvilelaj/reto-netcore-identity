@@ -34,8 +34,23 @@
     <Content Include="app.js" />
     <Content Include="public\html\createuser.html" />
     <Content Include="public\html\index.html" />
+    <Content Include="public\html\agencias.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\html\login.html" />
+    <Content Include="public\javascripts\agencias\agencias-presenter.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\javascripts\agencias\agencias.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\javascripts\agencias\agencias-view.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\javascripts\common\general.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\javascripts\providers\agencias-provider.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="public\javascripts\providers\auth-provider.js">
@@ -56,6 +71,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="public\javascripts\login\login.js" />
+    <Content Include="public\stylesheets\agencias.css" />
     <Content Include="public\stylesheets\createuser.css" />
     <Content Include="public\stylesheets\index.css">
       <SubType>Code</SubType>
@@ -74,6 +90,7 @@
     <Folder Include="public\html\" />
     <Folder Include="public\javascripts\login\" />
     <Folder Include="public\javascripts\common\" />
+    <Folder Include="public\javascripts\agencias\" />
     <Folder Include="public\javascripts\providers\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />

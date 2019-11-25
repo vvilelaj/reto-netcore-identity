@@ -23,7 +23,7 @@
                 })
             .done(
                 (data) => {
-                    this._config.localStorage.setItem(LocalStorageKey.TOKEN, data.data);
+                    this._config.localStorage.setItem(LocalStorageKey.TOKEN, data);
                     console.log(data.data);
                     this._config.loginView.showMessage('Se inició sesión con éxito.');
                     this._config.general.redirectTo(AgenciasUrl.BASE + AgenciasUrl.AGENCIAS);
