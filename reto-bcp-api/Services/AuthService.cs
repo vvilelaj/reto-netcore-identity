@@ -48,7 +48,7 @@ namespace reto_bcp_api.Services
             if (user == null)
                 throw new ApplicationException($"AuthService.Login : usuario {loginDto.Usuario} no existe.");
 
-            var result = _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false).Result;
+            var result = _signInManager.CheckPasswordSignInAsync(user, loginDto.contrasena, false).Result;
             if (!result.Succeeded)
                 throw new ApplicationException($"AuthService.Login : usuario {loginDto.Usuario} no puede loguearse.");
 

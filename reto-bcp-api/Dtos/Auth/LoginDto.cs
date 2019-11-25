@@ -8,6 +8,6 @@ namespace reto_bcp_api.Dtos.Auth
     public class LoginDto
     {
         public string Usuario { get; set; }
-        public string Password { get; set; }
+        public string contrasena { get; set; }
     }
 }
