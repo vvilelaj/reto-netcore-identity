@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using reto_bcp_api.Persistance;
 
 namespace reto_bcp_api.Migrations
 {
     [DbContext(typeof(RetoBCPDbContext))]
-    partial class RetoBCPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191125002321_Change_precision_Agencia.Latitud_y_Agencia.Longitud_3")]
+    partial class Change_precision_AgenciaLatitud_y_AgenciaLongitud_3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

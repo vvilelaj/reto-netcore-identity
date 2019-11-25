@@ -44,10 +44,14 @@ namespace reto_bcp_api.Persistance
                 .HasColumnName("Direccion").HasDefaultValue(string.Empty).HasMaxLength(500);
             //
             modelBuilder.Entity<Agencia>().Property(x => x.Latitud)
-                .HasColumnName("Latitud").HasDefaultValue(0.0);
+                .HasColumnName("Latitud")
+                .HasColumnType("decimal(18,8)")
+                .HasDefaultValue(0.0);
             //
             modelBuilder.Entity<Agencia>().Property(x => x.Longitud)
-                .HasColumnName("Longitud").HasDefaultValue(0.0);
+                .HasColumnName("Longitud")
+                .HasColumnType("decimal(18,8)")
+                .HasDefaultValue(0.0);
 
 
             base.OnModelCreating(modelBuilder);
