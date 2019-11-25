@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using reto_bcp_api.Persistance;
 
 namespace reto_bcp_api.Migrations
 {
     [DbContext(typeof(RetoBCPDbContext))]
-    partial class RetoBCPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191125032946_Add_AspNetIdentity")]
+    partial class Add_AspNetIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

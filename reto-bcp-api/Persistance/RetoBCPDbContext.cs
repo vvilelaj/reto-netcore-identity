@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using reto_bcp_api.Persistance.Models;
 using System;
 using System.Collections.Generic;
@@ -7,14 +8,28 @@ using System.Threading.Tasks;
 
 namespace reto_bcp_api.Persistance
 {
-    public class RetoBCPDbContext : DbContext
+    /// <summary>
+    /// 
+    /// </summary>
+    public class RetoBCPDbContext : IdentityDbContext<RetoBcpUser>
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public DbSet<Agencia> Agencias { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="options"></param>
         public RetoBCPDbContext(DbContextOptions<RetoBCPDbContext> options) : base(options)
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Agencia>()

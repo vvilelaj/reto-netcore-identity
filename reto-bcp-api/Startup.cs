@@ -15,11 +15,22 @@ using Swashbuckle.AspNetCore.Swagger;
 using System.Reflection;
 using System.IO;
 using System;
+//using Microsoft.IdentityModel;
+using reto_bcp_api.Persistance.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace reto_bcp_api
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,7 +38,10 @@ namespace reto_bcp_api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services
@@ -45,11 +59,23 @@ namespace reto_bcp_api
                 {
                     options.UseSqlServer(Configuration.GetConnectionString("RetoBCPDbContext"));
                 });
+            services
+                .AddIdentity<RetoBcpUser, IdentityRole>(opts =>
+                {
+                    opts.Password = new PasswordOptions();
+                    opts.Password.RequiredLength = 4;
+                    opts.Password.RequireUppercase = false;
+                    opts.Password.RequireDigit = false;
+                    opts.Password.RequireNonAlphanumeric = false;
+                })
+                .AddEntityFrameworkStores<RetoBCPDbContext>();
 
             services
                 .AddScoped<IAgenciaRepository, AgenciaRepository>();
             services
                 .AddScoped<IAgenciaService, AgenciaService>();
+            services
+                .AddScoped<ICuentasUsuarioService, CuentasUsuarioService>();
 
             services.AddSwaggerGen(swagger =>
             {
@@ -71,7 +97,11 @@ namespace reto_bcp_api
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             // Enable middleware to serve generated Swagger as a JSON endpoint.
@@ -87,6 +117,8 @@ namespace reto_bcp_api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseIdentity();
 
             app.UseMvc();
         }
